@@ -1,26 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @import "tailwindcss";
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /*Default Color palette*/
+  --color-pink-dark: #ED4B9B;
+  --color-pink-light: #FF65C3;
+  --color-purple-contrast: #C7AEF7;
+  --color-blue-dark: #151D2B;
+  --color-gray-dark: #2F3239;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-poppins: "Poppins", sans -serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-pink-dark: var(--color-pink-dark);
+  --color-pink-light: var(--color-pink-light);
+  --color-purple-contrast: var(--color-purple-contrast);
+  --color-blue-dark: var(--color-blue-dark);
+  --color-gray-dark: var(--color-gray-dark);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-poppins: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans, Arial, sans-serif);
+}
+
+a:hover {
+  color: var(--color-pink-light);
+  transition: all;
+  transition-duration: 300ms;
 }
