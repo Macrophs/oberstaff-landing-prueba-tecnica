@@ -22,7 +22,7 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-poppins: "Poppins", sans -serif;
+  --font-poppins: "Poppins", sans-serif;
 }
 
 @theme inline {
@@ -42,8 +42,8 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans, Arial, sans-serif);
+  color: var(--color-gray-dark);
+  font-family: var(--font-poppins);
 }
 
 a:hover {

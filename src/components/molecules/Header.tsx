@@ -19,7 +19,7 @@ export default function Header() {
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full font-poppins flex items-center justify-around ${isScrolled ? "bg-background backdrop-blur-md shadow-lg py-2 text-gray-dark " : "bg-transparent py-4 text-background"}`}>
 
             <div className={`text-4xl font-bold  `}>
-                Oberstaff<span className='text-pink-light  absolute bottom-2'>•</span>
+                Oberstaff<span className={`text-pink-light absolute transition-all duration-300  ${isScrolled ? "bottom-0 " : "bottom-2 " }`}>•</span>
 
             </div>
             <div className='flex items-center gap-8 text-md font-semibold'>

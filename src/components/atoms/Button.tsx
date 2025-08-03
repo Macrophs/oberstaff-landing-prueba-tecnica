@@ -11,11 +11,11 @@ export default function Button({ children, type, onClick, className }: ButtonPro
 
     const Types: Record<"default" | "active", string> = {
         default: "bg-gradient-to-r from-pink-dark to-pink-light hover:from-pink-light hover:to-pink-dark text-white ",
-        active: "bg-gradient-to-r from-pink-dark to-pink-light hover:from-pink-light hover:to-pink-dark text-white",
+        active: "bg-gradient-to-r from-pink-dark via-pink-light/80 to-purple-contrast hover:from-pink-light hover:to-pink-dark text-white",
     }
 
     return (
-        <button type='button' onClick={onClick} className={`${Types[type]} border-0 cursor-pointer transition-all duration-300  px-4 py-2 rounded-md flex gap-2 items-center  ${className ?? ''}`}>
+        <button type='button' onClick={onClick} className={`${Types[type]} border-0  cursor-pointer transition-all duration-300  px-4 py-2 rounded-md flex gap-2 items-center  ${className ?? ''}`}>
             {children}
         </button>
     )
