@@ -1,8 +1,10 @@
 "use client"
-import React, { useEffect, useState } from 'react'
-import { ArrowRight, Quote, Star, X } from 'lucide-react'
-import Button from '../atoms/Button'
-import VideoCard from '../molecules/VideoCard'
+import React, { useEffect, useState } from "react"
+import { X } from "lucide-react"
+import Button from "../atoms/Button"
+import VideoCard from "../molecules/VideoCard"
+import { WritingText } from "../animate-ui/text/writing"
+import { MotionEffect } from "../animate-ui/effects/motion-effect"
 
 interface TestimonialInterface {
     id: string,
@@ -75,23 +77,51 @@ export default function Clients() {
     }
 
     return (
-        <section id='clients' className='flex flex-col items-center p-10 py-20 w-full bg-gradient-to-br from-blue-dark to-blue-dark/95 text-background min-h-[600px] gap-14'>
-            <div className='flex flex-col items-center gap-10'>
-                <div className='relative inline-block'>
+        <section id="clients" className="flex flex-col items-center p-10 py-20 w-full bg-gradient-to-br from-blue-dark to-blue-dark/95 text-background min-h-[600px] gap-14">
 
-                    <h2 className='text-3xl sm:text-5xl lg:text-6xl font-semibold'>Casos de éxito</h2>
+
+            <MotionEffect
+                slide={{ direction: "up" }}
+                fade
+                blur="4px"
+                transition={{
+                    duration: 1,
+                    ease: "easeInOut",
+                }}
+                delay={0.3}
+                className="flex flex-col items-center gap-10"
+                inView>
+
+
+                <div className="relative inline-block">
+                    <WritingText
+                        inView
+                        className="text-4xl md:text-5xl lg:text-6xl font-semibold"
+                        text="Casos de éxito"
+                    />
                     <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-full h-4 bg-gradient-to-r from-pink-dark  via-pink-light to-pink-light/70 " style={{
-                        clipPath: 'polygon(2% 60%, 100% 30%, 98% 98%, 0% 100%)',
+                        clipPath: "polygon(2% 60%, 100% 30%, 98% 98%, 0% 100%)",
                     }} />
 
                 </div>
 
-                <p className='text-base sm:text-lg lg:text-xl text-center text-gray-300 max-w-[90%] sm:max-w-3xl font-semibold '>En Oberstaff creemos que nuestros resultados hablan mucho más que las palabras</p>
-                <p className='text-base sm:text-lg lg:text-xl text-center max-w-[90%] sm:max-w-3xl  text-pink-dark font-semibold -mt-6 '>¿Quieres ser parte de la lista de clientes satisfechos con nuestro servicio?</p>
+                <p className="text-base sm:text-lg lg:text-xl text-center text-gray-300 max-w-[90%] sm:max-w-3xl font-semibold ">En Oberstaff creemos que nuestros resultados hablan mucho más que las palabras</p>
+                <p className="text-base sm:text-lg lg:text-xl text-center max-w-[90%] sm:max-w-3xl  text-pink-dark font-semibold -mt-6 ">¿Quieres ser parte de la lista de clientes satisfechos con nuestro servicio?</p>
+            </MotionEffect>
 
-            </div>
+            <MotionEffect
+                zoom
+                fade
+                blur="4px"
+                transition={{
+                    duration: 1.5,
+                    ease: "easeInOut",
+                }}
+                delay={0.3}
+                className="flex flex-wrap justify-center gap-8 w-full px-4"
+                inView>
 
-            <div className="flex flex-wrap justify-center gap-8 w-full px-4">
+
 
                 {testimonials.map((t) => (
                     <VideoCard
@@ -106,13 +136,25 @@ export default function Clients() {
                 ))}
 
 
-            </div>
-            <Button
-                type='active'
-                className='text-2xl !rounded-4xl hover:scale-110'
-            >
-                Agendemos una llamada
-            </Button>
+
+            </MotionEffect>
+            <MotionEffect
+                fade
+                blur="20px"
+                transition={{
+                    duration: 1.5,
+                    ease: "backInOut",
+                }}
+                delay={0.3}
+                inView>
+                <Button
+                    type="active"
+                    className="text-2xl !rounded-4xl hover:scale-110"
+                >
+                    Agendemos una llamada
+                </Button>
+
+            </MotionEffect>
 
             {/*Video Modal*/}
             {activeModal && (
@@ -155,10 +197,10 @@ export default function Clients() {
                             <div className="p-6 bg-gray-50">
                                 <div className="text-center">
                                     <blockquote className="text-gray-700 italic mb-4">
-                                        "{selectedTestimonial?.testimonial}"
+                                        &quot;{selectedTestimonial?.testimonial}&quot;
                                     </blockquote>
                                     <Button
-                                        type='default'
+                                        type="default"
                                         className="mx-auto !from-blue-dark !to-blue-dark/90 !via-0% hover:shadow-purple-contrast hover:shadow-2xl  "
                                         onClick={closeModal}
                                     >

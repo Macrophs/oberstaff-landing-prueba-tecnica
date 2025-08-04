@@ -4,13 +4,32 @@ import { ArrowRight, ClockFading, Globe, ShieldCheck, User2 } from 'lucide-react
 import Benefits from '../molecules/Benefits'
 import OurTalent from '../molecules/OurTalent'
 import StatsCard from '../atoms/StatsCard'
+import { WritingText } from '../animate-ui/text/writing'
+import { MotionEffect } from '../animate-ui/effects/motion-effect'
 
 export default function WhyUs() {
     return (
         <section id='why' className='flex flex-col items-center px-6 md:px-16 xl:px-40 py-20 w-full bg-background min-h-[600px] gap-14'>
-            <div className='flex flex-col items-center gap-10'>
+
+            <MotionEffect
+                slide={{ direction: "up" }}
+                fade
+                blur="4px"
+                transition={{
+                    duration: 1,
+                    ease: 'easeInOut',
+                }}
+                delay={0.2}
+                className='flex flex-col items-center gap-10'
+                inView>
+
+
                 <div className='relative inline-block text-center'>
-                    <h2 className='text-4xl md:text-5xl lg:text-6xl font-semibold'>¿Por qué Oberstaff?</h2>
+                    <WritingText
+                        inView
+                        className='text-4xl md:text-5xl lg:text-6xl font-semibold'
+                        text="¿Por  qué Oberstaff?"
+                    />
                     <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-full h-4 bg-gradient-to-r from-pink-dark via-pink-light to-purple-contrast"
                         style={{
                             clipPath: 'polygon(2% 60%, 100% 30%, 98% 98%, 0% 100%)',
@@ -21,12 +40,47 @@ export default function WhyUs() {
                 <p className='text-lg md:text-xl font-semibold text-center text-gray-500 max-w-4xl'>
                     <span className='text-pink-light'>Miles de empresas</span> confían en nosotros para acceder a <span className='text-purple-contrast'>talento remoto</span> de clase mundial con máximo ahorro y flexibilidad
                 </p>
-            </div>
+            </MotionEffect>
 
-            <Benefits />
-            <OurTalent />
+            <MotionEffect
+                zoom
+                fade
+                blur="10px"
+                transition={{
+                    duration: 1.5,
+                    ease: 'circInOut',
+                }}
+                delay={0.3}
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full'>
+                inView>
+                <Benefits />
+            </MotionEffect>
+            <MotionEffect
+                zoom
+                fade
+                blur="10px"
+                transition={{
+                    duration: 1.5,
+                    ease: 'circInOut',
+                }}
+                delay={0.5}
+
+                inView>
+                <OurTalent />
+            </MotionEffect>
+
+            <MotionEffect
+                zoom
+                fade
+                blur="10px"
+                transition={{
+                    duration: 1.5,
+                    ease: 'circInOut',
+                }}
+                delay={0.5}
+                className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full'
+                inView>
+
                 <StatsCard
                     title="Talento Evaluado"
                     description="Pruebas psicométricas y selección rigurosa"
@@ -55,9 +109,21 @@ export default function WhyUs() {
                     toColor="to-pink-dark"
                     icon={<ClockFading />}
                 />
-            </div>
 
-            <div className="group relative w-full">
+            </MotionEffect>
+
+            <MotionEffect
+                zoom
+                fade
+                blur="10px"
+                transition={{
+                    duration: 1.5,
+                    ease: 'circInOut',
+                }}
+                delay={0.5}
+                className="group relative w-full xl:w-3/4"
+                inView>
+
                 <div className="bg-gradient-to-r from-pink-dark to-purple-contrast rounded-3xl p-1 shadow-2xl hover:shadow-pink-dark/25 transition-all duration-500 transform hover:-translate-y-2">
                     <div className="bg-white p-6 sm:p-10 flex flex-col items-center gap-6 rounded-3xl shadow-xl text-center">
                         <h2 className='font-bold text-2xl sm:text-4xl'>
@@ -72,7 +138,8 @@ export default function WhyUs() {
                         </Button>
                     </div>
                 </div>
-            </div>
+
+            </MotionEffect>
         </section>
     )
 }

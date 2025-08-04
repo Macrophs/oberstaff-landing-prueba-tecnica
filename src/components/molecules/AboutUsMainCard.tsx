@@ -1,9 +1,21 @@
 import { ArrowRight, Briefcase, UsersRound } from 'lucide-react'
 import React from 'react'
+import { MotionEffect } from '../animate-ui/effects/motion-effect'
 
 export default function AboutUsMainCard() {
     return (
-        <div className='flex flex-col lg:flex-row justify-center items-center w-full gap-10 lg:gap-20 px-2'>
+
+        <MotionEffect
+            fade
+            blur="10px"
+            transition={{
+                duration: 1,
+                ease: "circInOut",
+            }}
+            delay={0.2}
+            className='flex flex-col lg:flex-row justify-center items-center w-full gap-10 lg:gap-20 px-2'
+            inView
+        >
             <div className='shadow-2xl rounded-4xl w-full lg:w-[45%] border-4 border-pink-dark/70 p-8 lg:p-10 flex flex-col gap-8 transition-all duration-500 transform hover:-translate-y-2'>
                 <section className='flex gap-2'>
                     <div className='bg-gradient-to-r from-pink-dark to-pink-light rounded-2xl flex items-center justify-center p-2 px-3'>
@@ -34,6 +46,7 @@ export default function AboutUsMainCard() {
                     <p className='text-pink-light text-center font-semibold text-sm'>Disponibilidad 24/7</p>
                 </section>
             </div>
+
 
             <div className='shadow-2xl rounded-4xl w-full lg:w-[45%] p-8 lg:p-10 flex flex-col gap-8 bg-gradient-to-br from-blue-dark via-blue-dark/90 to-purple-contrast transition-all duration-500 transform hover:-translate-y-2'>
                 <section className='flex gap-2'>
@@ -92,6 +105,6 @@ export default function AboutUsMainCard() {
                     <p className='text-purple-contrast text-center font-semibold text-sm'>Oportunidades globalmente</p>
                 </section>
             </div>
-        </div>
+        </MotionEffect>
     )
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { RippleButton } from '../animate-ui/buttons/ripple'
 
 interface ButtonProps {
     children: React.ReactNode
@@ -15,8 +16,8 @@ export default function Button({ children, type, onClick, className }: ButtonPro
     }
 
     return (
-        <button type='button' onClick={onClick} className={`${Types[type]} border-0  cursor-pointer transition-all duration-300  px-4 py-2 rounded-md flex gap-2 items-center  ${className ?? ''}`}>
-            {children}
-        </button>
+        <RippleButton type='button' onClick={onClick} className={`${Types[type]} border-0  cursor-pointer transition-all duration-300  px-4 py-2 rounded-md flex gap-2 items-center  ${className ?? ''}`}>
+            {children} 
+        </RippleButton>
     )
 }

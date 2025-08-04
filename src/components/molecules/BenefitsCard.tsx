@@ -15,7 +15,6 @@ export default function BenefitsCard({
     description,
     gradientFrom = 'from-pink-dark',
     gradientTo = 'to-pink-light',
-    borderColor = 'border-pink-dark',
 }: BenefitsCardProps) {
     return (
         <div className="group relative  flex-1/4">

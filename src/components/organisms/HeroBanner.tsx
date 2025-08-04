@@ -3,6 +3,9 @@ import Button from '../atoms/Button'
 import { ArrowBigRightDash, Globe, User2 } from 'lucide-react'
 import HeroStats from '../molecules/HeroStats'
 import FloatingCardHero from '../atoms/FloatingCardHero'
+import { MotionEffect } from '../animate-ui/effects/motion-effect'
+import { Magnetic } from '../animate-ui/effects/magnetic'
+import { GradientText } from '../animate-ui/text/gradient'
 
 export default function HeroBanner() {
     return (
@@ -25,23 +28,61 @@ export default function HeroBanner() {
             <div className="container mx-auto px-4 relative z-20">
                 <div className="flex flex-col items-center gap-8 sm:gap-10 text-center">
                     <div>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-background font-bold">
-                            Contrata diferente
-                        </h1>
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-2 text-transparent font-bold bg-clip-text bg-gradient-to-r from-pink-light via-100% to-purple-contrast">
-                            Crece sin límites
-                        </h1>
+                        <MotionEffect
+                            slide={{ direction: "up" }}
+                            fade
+                            blur="4px"
+                            transition={{
+                                duration: 1,
+                                ease: 'easeInOut',
+                            }}
+                            inView>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-background font-bold">
+                                Contrata diferente
+                            </h1>
+
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-2 font-bold ">
+                                <GradientText
+
+                                    text="Crece sin límites"
+                                />
+
+                            </h1>
+                        </MotionEffect>
                     </div>
 
-                    <p className="text-gray-200 text-base sm:text-lg md:text-xl font-semibold text-center max-w-full sm:max-w-xl md:max-w-[52%]">
-                        Accede a profesionales que trabajen en remoto para tu empresa y <span className="text-pink-light">ahorra hasta un 70%</span> en comparación con la contratación tradicional.
-                    </p>
+                    <MotionEffect
+                        slide={{ direction: "up" }}
+                        fade
+                        blur="4px"
+                        transition={{
+                            duration: 1,
+                            ease: 'easeInOut',
+                        }}
+                        inView
+                        className="text-gray-200 text-base sm:text-lg md:text-xl font-semibold text-center max-w-full sm:max-w-xl md:max-w-[52%]"
+                    >
+
+                        <p >
+                            Accede a profesionales que trabajen en remoto para tu empresa y <span className="text-pink-light">ahorra hasta un 70%</span> en comparación con la contratación tradicional.
+                        </p>
+                    </MotionEffect>
 
                     <div className="text-base sm:text-lg md:text-xl">
-                        <Button type="default" className="!rounded-4xl px-6 py-3 hover:scale-110">
-                            Agendar Llamada Gratis
-                            <ArrowBigRightDash />
-                        </Button>
+                        <MotionEffect
+                            slide={{ direction: "up" }}
+                            fade
+                            blur="4px"
+                            transition={{
+                                duration: 1,
+                                ease: 'easeInOut',
+                            }}
+                            inView>
+                            <Button type="default" className="!rounded-4xl !px-6 !py-3 !text-xl !md:text-2xl hover:scale-110">
+                                Agendar Llamada Gratis
+                                <ArrowBigRightDash />
+                            </Button>
+                        </MotionEffect>
                     </div>
 
                     <HeroStats />
@@ -50,24 +91,53 @@ export default function HeroBanner() {
 
             <div className="absolute inset-0 z-30 pointer-events-none invisible xl:visible">
                 <div className="absolute top-1/4 left-4 sm:left-8 md:left-1/7 pointer-events-auto group">
-                    <FloatingCardHero
-                        titleTop="Talento"
-                        titleBottom="Latino"
-                        subtitle="24/7 Disponible"
-                        icon={<User2 className="text-white" />}
-                        position="right-left"
-                    />
+                    <MotionEffect
+                        fade
+                        blur={"6px"}
+                        slide={{ direction: "left" }}
+                        transition={{
+                            duration: 0.5,
+                            ease: "easeOut"
+                        }}
+                        delay={1}
+                        inView
+                    >
+                        <Magnetic>
+                            <FloatingCardHero
+                                titleTop="Talento"
+                                titleBottom="Latino"
+                                subtitle="24/7 Disponible"
+                                icon={<User2 className="text-white" />}
+                                position="right-left"
+                            />
+                        </Magnetic>
+                    </MotionEffect>
                 </div>
                 <div className="absolute top-[60%] right-4 sm:right-8 md:right-1/7 pointer-events-auto group">
-                    <FloatingCardHero
-                        titleTop="Empresas"
-                        titleBottom="Internacionales"
-                        subtitle="ahorra hasta 70%"
-                        icon={<Globe className="text-white" />}
-                        position="left-right"
-                    />
+                    <MotionEffect
+                        fade
+                        blur={"6px"}
+                        slide={{ direction: "right" }}
+                        transition={{
+                            duration: 0.5,
+                            ease: "easeOut"
+                        }}
+                        delay={1}
+                        inView
+                    >
+                        <Magnetic>
+                            <FloatingCardHero
+                                titleTop="Empresas"
+                                titleBottom="Internacionales"
+                                subtitle="ahorra hasta 70%"
+                                icon={<Globe className="text-white" />}
+                                position="left-right"
+                            />
+                        </Magnetic>
+                    </MotionEffect>
+
                 </div>
             </div>
-        </section>
+        </section >
     )
 }

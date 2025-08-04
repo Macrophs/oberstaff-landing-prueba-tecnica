@@ -37,7 +37,7 @@ export default function VideoCard({
                     </div>
 
                     <blockquote className="text-gray-200 text-sm leading-relaxed mb-6 italic line-clamp-3">
-                        "{testimonial}"
+                        &quot;{testimonial}&quot;
                     </blockquote>
 
                     <button

@@ -1,4 +1,4 @@
-import { BadgeDollarSign, Crop, DollarSign, PackageSearch } from 'lucide-react'
+import { BadgeDollarSign, Crop, PackageSearch } from 'lucide-react'
 import React from 'react'
 import BenefitsCard from './BenefitsCard'
 

@@ -13,21 +13,21 @@ export default function Home() {
 		<>
 			<Header />
 
-			<HeroBanner/>
+			<HeroBanner />
 
-			<AboutUs/>
+			<AboutUs />
 
-			<HowItWorks/>
+			<HowItWorks />
 
-			<WhyUs/>
+			<WhyUs />
 
-			<Clients/>
+			<Clients />
 
-			<FAQ/>
+			<FAQ />
 
-			<ContactUs/>
+			<ContactUs />
 
-			<Footer/>
+			<Footer />
 		</>
 	);
 }

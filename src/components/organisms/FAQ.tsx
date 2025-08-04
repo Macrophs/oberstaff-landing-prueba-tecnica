@@ -1,8 +1,9 @@
 import React from 'react'
-import { ArrowRight, CircleDollarSignIcon, Clock, CreditCard, DollarSign, Eye, Globe, MessageCircle, ShieldCheck, Tag, Users, Zap } from 'lucide-react'
-import Button from '../atoms/Button'
+import {CircleDollarSignIcon, Clock, CreditCard, Eye, Globe, MessageCircle, ShieldCheck, Tag, Users, Zap } from 'lucide-react'
 import { Accordion } from '../ui/accordion'
 import AccordionFAQ from '../molecules/AccordionFAQ'
+import { MotionEffect } from '../animate-ui/effects/motion-effect'
+import { WritingText } from '../animate-ui/text/writing'
 
 const faqItems = [
     {
@@ -143,7 +144,7 @@ const faqItems = [
         titulo: "¿Que coste tiene prescindir de sus servicios?",
         contenido: (
             <>
-                <span className="text-pink-dark font-semibold">$0. </span> 
+                <span className="text-pink-dark font-semibold">$0. </span>
                 No te penalizamos por prescindir del servicio.
             </>
         ),
@@ -156,10 +157,27 @@ const faqItems = [
 
 export default function FAQ() {
     return (
-        <section id='faq' className="flex flex-col items-center px-4 md:px-10 py-16 md:py-20 w-full bg-background min-h-[600px] gap-10 md:gap-14">
-            <div className="flex flex-col items-center gap-6 md:gap-10 text-center">
+        <section id='faq' className="flex flex-col items-center px-4 md:px-10 py-16 md:py-20 w-full bg-background min-h-[600px] gap-10 md:gap-14 overflow-hidden">
+
+            <MotionEffect
+                slide={{ direction: "up" }}
+                fade
+                blur="4px"
+                transition={{
+                    duration: 1,
+                    ease: 'easeInOut',
+                }}
+                delay={0.3}
+                className="flex flex-col items-center gap-6 md:gap-10 text-center"
+                inView>
+
+
                 <div className="relative inline-block">
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold">Preguntas Frecuentes</h2>
+                    <WritingText
+                        inView
+                        className='text-4xl md:text-5xl lg:text-6xl font-semibold'
+                        text="Preguntas Frecuentes"
+                    />
                     <div
                         className="absolute -bottom-2 md:-bottom-3 left-1/2 transform -translate-x-1/2 w-full h-3 md:h-4 bg-gradient-to-r from-pink-dark via-pink-light to-pink-300"
                         style={{
@@ -171,9 +189,11 @@ export default function FAQ() {
                 <p className="text-base md:text-xl text-gray-500 max-w-xl font-semibold">
                     Consulta las dudas más recurrentes acerca de nuestro servicio
                 </p>
-            </div>
+            </MotionEffect>
+
 
             <div className="w-full xl:w-[60%] 2xl:w-1/2 ">
+
                 <Accordion type="single" collapsible className="flex flex-col gap-4 w-full items-center">
                     {faqItems.map((item) => (
                         <AccordionFAQ
@@ -188,7 +208,9 @@ export default function FAQ() {
                         />
                     ))}
                 </Accordion>
+
             </div>
+
         </section>
     )
 }

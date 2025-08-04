@@ -16,8 +16,9 @@ export default function StatsCard({
     icon,
 }: StatsCardProps) {
     return (
-        <div className='flex flex-col items-center justify-center gap-4'>
-            <div className={`bg-gradient-to-r ${fromColor} ${toColor} rounded-2xl flex items-center text-white p-4`}>
+
+        <div className='flex flex-col items-center justify-center gap-4 group'>
+            <div className={`bg-gradient-to-r ${fromColor} ${toColor} rounded-2xl flex items-center text-white p-4 transition-all duration-300 group-hover:scale-120`}>
                 {icon}
             </div>
 
@@ -25,5 +26,6 @@ export default function StatsCard({
 
             <p className='text-gray-500 text-center'>{description}</p>
         </div>
+
     )
 }

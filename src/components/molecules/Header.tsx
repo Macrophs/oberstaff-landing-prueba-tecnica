@@ -2,15 +2,20 @@
 import React, { useEffect, useState } from 'react'
 import Button from '../atoms/Button'
 import { Menu, X } from 'lucide-react'
+import { MotionEffect } from '../animate-ui/effects/motion-effect'
+import { TypingText } from '../animate-ui/text/typing'
 
 export default function Header() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     useEffect(() => {
+        setIsScrolled(window.scrollY > 50)
+
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50)
         }
+        
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
@@ -20,12 +25,37 @@ export default function Header() {
 
 
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold relative">
-                Oberstaff
-                <span className={`text-pink-light absolute transition-all duration-300 -bottom-2 invisible md:visible`}>•</span>
+                <TypingText
+                    text="Oberstaff"
+                />
+                <MotionEffect
+                    slide={{ direction: "right" }}
+                    fade
+                    transition={{
+                        delay: 1,
+                        ease: "easeIn"
+                    }}
+                    inView
+                >
+                    <span className={`text-pink-light absolute transition-all duration-300 -bottom-2 -right-3 invisible md:visible`}>•</span>
+                </MotionEffect>
+
             </div>
 
 
-            <div className="hidden lg:flex items-center gap-8 text-sm xl:text-md font-semibold">
+
+            <MotionEffect
+                zoom={{ initialScale: 0.8, scale: 1 }}
+                slide={{ direction: "left", offset: 500 }}
+                fade
+                transition={{
+                    delay: 1,
+                    ease: "easeIn",
+                    duration: 0.5
+                }}
+                inView
+                className="hidden lg:flex items-center gap-8 text-sm xl:text-md font-semibold"
+            >
                 <a href="#about" className="hover:text-pink-light transition">Sobre Nosotros</a>
                 <a href="#services" className="hover:text-pink-light transition">Servicios</a>
                 <a href="#why" className="hover:text-pink-light transition">¿Por qué Oberstaff?</a>
@@ -34,7 +64,10 @@ export default function Header() {
                 <a href="#contact">
                     <Button type='default'>Contactar</Button>
                 </a>
-            </div>
+
+            </MotionEffect>
+
+
 
 
             <button
