@@ -41,7 +41,7 @@ const testimonials: TestimonialInterface[] = [
         id: "kate",
         name: "Kate McCaferty",
         role: "KM Real Estate",
-        videoSrc: "/videos/kate.mp4",
+        videoSrc: "/videos/katev.mp4",
         testimonial:
             "I've been working with Oberstaff now for about 2 years. Me and my company had a great experience, from the moment you sign up you immediately have the best team looking up for you into 20000 profiles.",
         gradient: "bg-gradient-to-br from-blue-dark/20 to-purple-contrast/20",
