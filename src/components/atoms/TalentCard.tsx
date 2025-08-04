@@ -5,7 +5,7 @@ interface TalentCardProps {
     title: string
     description: string
     tags: string[]
-    tagColor?: string,
+    tagColor?: string
     gradientIconFrom: string
     gradientIconTo: string
     gradientBgFrom: string
@@ -27,7 +27,7 @@ export default function TalentCard({
 }: TalentCardProps) {
     return (
         <div
-            className={`bg-gradient-to-r ${gradientBgFrom} ${gradientBgTo} rounded-2xl border ${borderColor} p-4 flex-1/4 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
+            className={`w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] bg-gradient-to-r ${gradientBgFrom} ${gradientBgTo} rounded-2xl border ${borderColor} p-4 flex flex-col gap-4 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1`}
         >
             <div className="flex gap-4 items-center">
                 <div
@@ -35,16 +35,16 @@ export default function TalentCard({
                 >
                     {icon}
                 </div>
-                <p className="font-bold text-xl">{title}</p>
+                <p className="font-bold text-lg sm:text-xl">{title}</p>
             </div>
 
-            <p className="text-gray-500">{description}</p>
+            <p className="text-gray-500 text-sm sm:text-base">{description}</p>
 
             <div className="flex flex-wrap gap-2">
                 {tags.map((tag, index) => (
                     <span
                         key={index}
-                        className={`text-xs ${tagColor}  text-white px-2 py-1 rounded-full`}
+                        className={`text-xs ${tagColor} text-white px-2 py-1 rounded-full`}
                     >
                         {tag}
                     </span>

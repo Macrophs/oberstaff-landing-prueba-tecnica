@@ -27,7 +27,7 @@ export default function BenefitsCard({
 
 
 
-                    <h3 className='font-bold text-2xl text-blue-dark'>{title}</h3>
+                    <h3 className='font-bold text-2xl text-blue-dark text-center'>{title}</h3>
 
                     <p className='text-gray-500 text-lg text-center'>{description}</p>
                 </div>

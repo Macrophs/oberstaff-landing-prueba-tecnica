@@ -4,18 +4,17 @@ import { BriefcaseBusiness, Code, Paintbrush, PencilLine, Share2, TrendingUp } f
 
 export default function OurTalent() {
     return (
-        <section className=' bg-white shadow-xl border border-gray-300/30 p-10  rounded-2xl flex flex-col w-full items-center gap-10'>
+        <section className='bg-white shadow-xl border border-gray-300/30 p-6 sm:p-10 rounded-2xl flex flex-col w-full items-center gap-10'>
 
-            <h2 className='font-bold text-4xl'>
+            <h2 className='font-bold text-3xl sm:text-4xl text-center'>
                 Talento Especializado
             </h2>
 
-            <p className='text-gray-500 font-semibold text-xl'>
+            <p className='text-gray-500 font-semibold text-base sm:text-xl text-center max-w-3xl'>
                 Profesionales altamente calificados en las áreas más demandadas del mercado digital
             </p>
 
-            <div className='flex flex-wrap gap-8 w-full '>
-
+            <div className='flex flex-wrap gap-6 justify-center w-full'>
                 <TalentCard
                     icon={<TrendingUp />}
                     title="Marketing Digital"
@@ -82,9 +81,7 @@ export default function OurTalent() {
                     gradientBgFrom="from-blue-dark/10"
                     gradientBgTo="to-purple-contrast/20"
                 />
-
             </div>
-
         </section>
     )
 }
