@@ -15,14 +15,7 @@ export default function Footer() {
     return (
         <BubbleBackground
 
-            colors={{
-                first: '245,245,245',      // Gris muy claro, fondo base
-                second: '209, 194, 252',     // Rosa claro (LightPink)
-                third: '255,220,240',      // Rosa pastel más tenue
-                fourth: '255,240,245',     // LavenderBlush, rosado casi blanco
-                fifth: '240,200,255',      // Lila pastel
-                sixth: '230,230,255'       // Azul lavanda muy suave
-            }}
+            colors={{ first: '245,245,245', second: '209, 194, 252', third: '255,220,240', fourth: '255,240,245', fifth: '240,200,255', sixth: '230,230,255' }}
             interactive
             className="relative overflow-hidden p-6 md:p-10 bg-gray-300"
         >
@@ -166,7 +159,7 @@ export default function Footer() {
 
                     <div className="mt-6 md:mt-10 flex flex-col md:flex-row justify-center md:justify-around items-center gap-2 md:gap-0 text-center">
                         <div className="text-gray-700 text-sm">
-                            © 2025 Oberstaff. Todos los derechos reservados.
+                            © 2025 Oberstaff. <a href="https://github.com/Macrophs"> Santiago Antonio Anselmi Hernández. </a> Todos los derechos reservados.
                         </div>
                         <a href="#" className="text-gray-700 text-sm">
                             Privacy Policy and Use of Cookies
